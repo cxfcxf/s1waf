@@ -4,14 +4,14 @@
 
 #how to
 in nginx.conf
-1. set a lua shared DICT called waf inside nginx
-2. initialize a variable called $postctl
+* 1. set a lua shared DICT called waf inside nginx
+* 2. initialize a variable called $postctl
 ```
 set $postctl 10  <- 10 sec between posts
 ```
-3. initialize access control
+* 3. initialize access control
 ```
 access_by_lua_file waf.lua;
 ```
 
-a reload is required each time you change $postctl value inside nginx.conf
+#a reload is required each time you change $postctl value inside nginx.conf
