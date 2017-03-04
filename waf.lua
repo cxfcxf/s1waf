@@ -25,3 +25,8 @@ if request_method == "POST" and ( string.find(uri, "forum.php") or string.find(u
                 end
         end
 end
+
+local ua = ngx.req.get_headers()['User-Agent']
+if request_method == "POST" and string.find(ua, "Microsoft URL Control") then
+        ngx.exit(ngx.HTTP_FORBIDDEN)
+end
